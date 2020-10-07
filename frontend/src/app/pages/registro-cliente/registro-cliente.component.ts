@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistroClienteComponent implements OnInit {
 
+  alertExito: boolean;
   constructor() { }
 
   ngOnInit(): void {
+    this.alertExito = false;
+  }
+
+
+  alert(){
+    this.alertExito = true;
+
+    setTimeout(() => { this.alertExito = false; }, 3000);
   }
 
 }

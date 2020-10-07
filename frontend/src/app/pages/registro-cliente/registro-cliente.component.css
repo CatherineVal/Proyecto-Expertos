@@ -1,0 +1,28 @@
+.abs-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    border: #000000;
+}
+
+.form{
+    width: 450px;
+}
+
+.border{
+    backdrop-filter: 1px color #000000;
+}
+
+.text-primary{
+    color: #d64e82 !important;
+}
+
+.bg-primary{
+    background-color: #d64e82 !important;
+}
+
+.btn-primary{
+    background-color: #d64e82 !important;
+    border-color: white !important;
+}
