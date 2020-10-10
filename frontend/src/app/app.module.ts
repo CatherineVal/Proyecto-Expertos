@@ -10,6 +10,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { LoginAdministradorComponent } from './pages/login-administrador/login-administrador.component';
 import { RegistroEmpresaComponent } from './pages/registro-empresa/registro-empresa.component';
 import { RegistroClienteComponent } from './pages/registro-cliente/registro-cliente.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 
 
@@ -24,6 +25,8 @@ import { RegistroClienteComponent } from './pages/registro-cliente/registro-clie
     RegistroEmpresaComponent,
     
     RegistroClienteComponent,
+    
+    DashboardComponent,
     
   ],
   imports: [
