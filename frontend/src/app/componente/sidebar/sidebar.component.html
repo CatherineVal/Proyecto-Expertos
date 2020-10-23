@@ -1,0 +1,37 @@
+<nav id="sidebar">
+
+    <div class="custom-menu d-none">
+        <button type="button" id="sidebarCollapse" class="btn btn-primary">
+        </button>
+    </div>
+    <div class="img bg-wrap text-center py-4" style="background-image: url(images/bg_1.jpg);">
+        <div class="user-logo">
+            <div class="img" style="background-image: url(images/logo.jpg);"></div>
+            <h3>Catriona Henderson</h3>
+        </div>
+    </div>
+    <ul class="list-unstyled components mb-5">
+        <li class="">
+            <a [routerLink]="['/dashboard/usuarios']" routerLinkActive="active"><span class="fa fa-home mr-3"></span>Usuarios</a>
+        </li>
+        <li>
+            <a [routerLink]="['/dashboard/plantillas']" routerLinkActive="active"><span class="fa fa-download mr-3 notif"></span> plantillas</a>
+        </li>
+        <li>
+            <a [routerLink]="['/dashboard/clientes']" routerLinkActive="active" ><span class="fa fa-gift mr-3"></span> Clientes</a>
+        </li>
+        <li>
+            <a [routerLink]="['/dashboard/empresas']" routerLinkActive="active"><span class="fa fa-trophy mr-3"></span>empresas</a>
+        </li>
+        <li>
+            <a [routerLink]="['/dashboard/roles']" routerLinkActive="active"><span class="fa fa-cog mr-3"></span>Roles</a>
+        </li>
+        <li>
+            <a [routerLink]="['/dashboard/planes']" routerLinkActive="active"><span class="fa fa-support mr-3"></span>Planes</a>
+        </li>
+        <li>
+            <a href="#"><span class="fa fa-sign-out mr-3"></span> Sign Out</a>
+        </li>
+    </ul>
+
+</nav>

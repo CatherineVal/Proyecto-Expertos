@@ -1,73 +1,13 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">G-Service</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-      </ul>
-      <form class="form-inline my-2 my-lg-0"><br>
-        <div class="dropdown">
-          <img class="rounded-circle img-fluid" width="40px" height="60px" src="https://library.kissclipart.com/20181001/wbw/kissclipart-gsmnet-ro-clipart-computer-icons-user-avatar-4898c5072537d6e2.png" alt="">
-            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Name User
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">Tu perfil</a>
-              <a class="dropdown-item" href="#">Configuraciones</a>
-              <a class="dropdown-item" href="#">Cerrar serion</a>
-            </div>
-          </div>
-      </form>
-    </div>
-  </nav>
 
+<div class="wrapper d-flex align-items-stretch">
   
-  <div class="d-flex" id="wrapper">
- <!-- Sidebar -->
- <div class="bg-light border-right" id="sidebar-wrapper">
-  <img class="rounded-circle img-fluid" width="80px" height="80px" src="https://library.kissclipart.com/20181001/wbw/kissclipart-gsmnet-ro-clipart-computer-icons-user-avatar-4898c5072537d6e2.png" alt="">
-  <div class="sidebar-heading">Name User</div>
-  <div class="list-group list-group-flush">
-    <a href="#" class="list-group-item list-group-item-action bg-light">Dashboard</a>
-    <a href="#" class="list-group-item list-group-item-action bg-light">Gestion de empresas</a>
-    <a href="#" class="list-group-item list-group-item-action bg-light">Gestion de Planes</a>
-    <a href="#" class="list-group-item list-group-item-action bg-light">Plantillas o temas</a>
-    <a href="#" class="list-group-item list-group-item-action bg-light">Seguridad </a>
-    <a href="#" class="list-group-item list-group-item-action bg-light">Roles</a>
+  <app-sidebar></app-sidebar>
+ 
+
+  <!-- Page Content  -->
+  <div id="content" class="p-4 p-md-5 pt-5">
+ 
+    <router-outlet></router-outlet>
+    
   </div>
 </div>
-<!-- /#sidebar-wrapper -->
-
- <div class="container-fluid">
-   <div class="row">
-     <div class="col-md-6 ">
-      <div class="card text-center">
-        <div class="card-header">
-          Datos
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Gestion de empresas  <button type="button" class="btn btn-secondary">editar</button>
-            <button type="button" class="btn btn-danger">eliminar</button></h5>
-          
-          <div class="list-group">
-            <a href="#" class="list-group-item list-group-item-action active">
-              Lista de empresas
-            </a>
-            <a href="#" class="list-group-item list-group-item-action">Empresa 1</a>
-            <a href="#" class="list-group-item list-group-item-action">Empresa2</a>
-            <a href="#" class="list-group-item list-group-item-action">Empresa3</a>
-            <a href="#" class="list-group-item list-group-item-action disabled">Empresa4</a>
-          </div>
-       
-        </div>
-        <div class="card-footer text-muted">
-          2 days ago
-        </div>
-      </div>
-     </div>
-     <div class="col-md-6">
-       <h2></h2>
-     </div>
-   </div>
- </div>
