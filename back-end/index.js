@@ -13,6 +13,14 @@ app.use( bodyParser.urlencoded( { extended: true } ) );
 
 var rutaApp = require('./routes/app');
 var rutaRole = require('./routes/role');
+var rutaEmpresa = require('./routes/empresa');
+var rutaCliente = require('./routes/cliente');
+var rutaAdmin = require('./routes/admin');
+var rutaPlan = require('./routes/plan');
+
+
+
+
 
 
 
@@ -20,6 +28,15 @@ var rutaRole = require('./routes/role');
 
 app.use( '/app', rutaApp );
 app.use( '/roles', rutaRole );
+app.use( '/empresa', rutaEmpresa );
+app.use( '/cliente', rutaCliente );
+app.use( '/admin', rutaAdmin );
+app.use( '/plan', rutaPlan );
+
+
+
+
+
 
 
 app.listen( 3000, () => {

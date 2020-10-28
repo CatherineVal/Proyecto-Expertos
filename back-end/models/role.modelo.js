@@ -2,11 +2,11 @@ var mongoose = require('mongoose');
 
 let Schema = mongoose.Schema;
 
-let roleEsquema = new Schema({
+let esquema = new Schema({
 
     nombre: { type: String },
-    idEmpresa: { type: String }
+    descripcion: { type: String }
 
 });
 
-module.exports = mongoose.model('Role', roleEsquema);
+module.exports = mongoose.model('Role', esquema);

@@ -1,7 +1,7 @@
 var mongoose = require("mongoose");
 
 var servidor = "localhost:27017";
-var nombreBaseDatos ="Kathy";
+var nombreBaseDatos ="dbProyectoExpertos";
 
 class Database{
     constructor(){
