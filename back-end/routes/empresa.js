@@ -3,6 +3,7 @@ var router = express.Router();
 
 var Empresa = require('../models/empresa.modelo');
 var conexion = require('../database/database');
+var mongoose = require('mongoose');
 
 router.post( '/', function(req, res){
 
@@ -33,7 +34,7 @@ router.post( '/', function(req, res){
 
 router.get('/',(req, res)=>{
 
-    Empresa.find({},{nombre: true, descripcion: true, correo:true, direccion:true, plan:true, rtn: true}).then( empresas => {
+    Empresa.find({},{nombre: true, descripcion: true, correo:true, direccion:true, plan:true, rtn: true, productos:true}).then( empresas => {
         res.send(empresas);
         res.end();
     });
@@ -45,14 +46,67 @@ router.get('/',(req, res)=>{
 router.get('/:idEmpresa',(req, res)=>{
     let idEmpresa = req.params.idEmpresa;
 
-    Empresa.find({_id:idEmpresa},{nombre:true, descripcion:true, rtn:true, correo:true, direccion:true, plan:true, productos: true, banco:true }).then( empresas => {
+    Empresa.find({_id:idEmpresa},{nombre:true, descripcion:true, rtn:true, correo:true, direccion:true, plan:true, productos: true, banco:true, productos: true}).then( empresas => {
         res.send(empresas[0]);
         res.end();
     });
 
 });
 
+//agregar productos
+router.post('/:idEmpresa/productos', function (req, res) {
 
+    let body = req.body;
+    let idEmpresa = req.params.idEmpresa;
+
+    Empresa.update(
+        {
+            _id: idEmpresa,
+        },
+        {
+            $push: {
+                "productos": {
+                    _id: mongoose.Types.ObjectId(),
+                    nombre: body.nombreProducto,
+                    descripcion: body.descripcion,
+                    precio: body.precio
+                }
+            }
+        }
+    ).then(result => {
+        res.send(result);
+        res.end();
+    }).catch(error => {
+        res.send(error);
+        res.end();
+    });
+});
+
+//eliminar productos
+router.post('/:idEmpresa/productos/eliminar/:idProducto', function (req, res) {
+
+    let body = req.body;
+    let idEmpresa = req.params.idEmpresa;
+    let idProducto = req.params.idProducto;
+
+    Empresa.update(
+        {
+            _id: idEmpresa,
+
+        },
+        {
+            $pull: {
+                "productos": { _id: mongoose.Types.ObjectId(idProducto) }
+            }
+        }
+    ).then(result => {
+        res.send({result, mensaje:'Producto eliminado con exito'});
+        res.end();
+    }).catch(error => {
+        res.send(error);
+        res.end();
+    });
+});
 
 
 
