@@ -4,7 +4,7 @@ var router = express.Router();
 var Admin = require('../models/admin.modelo');
 var conexion = require('../database/database');
 
-router.post( '/', function(req, res){
+router.post('/', function (req, res) {
 
     let body = req.body;
 
@@ -13,36 +13,54 @@ router.post( '/', function(req, res){
         apellido: body.apellido,
         correo: body.correo,
         contrasenia: body.contrasenia,
-        estado: body.estado
-        
+        estado: Boolean(body.estado),
+        role: body.rol
     });
 
-    admin.save( (error, nuevoAdmin ) => {
+    admin.save((error, nuevoAdmin) => {
 
-        //if(error) return res.send(error);
+        if (error) return res.send(error);
+
         res.send(nuevoAdmin);
         res.end()
     });
 
 });
 
-router.get('/',(req, res)=>{
+router.get('/', (req, res) => {
 
-    Admin.find().then( administradores => {
+    Admin.find().then(administradores => {
         res.send(administradores);
         res.end()
     });
 
 });
 
-router.get('/:idAdmin',(req, res)=>{
+router.get('/:idAdmin', (req, res) => {
     let idAdmin = req.params.idAdmin;
-    Admin.find({_id:idAdmin},{nombre:true, apellido:true, correo:true, role:true}).then( administradores => {
+    Admin.find({ _id: idAdmin }, { nombre: true, apellido: true, correo: true, role: true }).then(administradores => {
         res.send(administradores[0]);
         res.end()
     });
 
 });
+
+
+router.delete('/:idAdmin', (req, res) => {
+
+    Admin.remove({ _id: req.params.idAdmin })
+        .then((data) => {
+            res.json(data);
+            res.end();
+        })
+        .catch((erro) => {
+            res.json(error);
+            res.end();
+        })
+});
+
+;
+
 
 
 

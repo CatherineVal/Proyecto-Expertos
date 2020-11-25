@@ -20,6 +20,10 @@ export class UsuariosService {
     
   }
 
+  eliminarUsuarios(id:any){
+    return this.http.delete(this.urlAppi + '/'+id);
+  }
+
   obtenerUsuarios(idUsuario:any){
     return this.http.get(`${this.urlAppi}/${idUsuario}`); // tambien se puede concatener con +
     //return this.http.get(this.urlAppi + '/' + idCliente);

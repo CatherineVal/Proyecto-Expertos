@@ -1,27 +1,101 @@
 <table class="table">
-    <thead class="thead-dark">
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Nombre Empresa</th>
-        <th scope="col">Descripcion</th>
-        <th scope="col">Correo</th>
-        <th scope="col">Direccion</th>
-        <th scope="col">Plan</th>
-        <th scope="col">RTN</th>
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre Empresa</th>
+      <th scope="col">Descripcion</th>
+      <th scope="col">Correo</th>
+      <th scope="col">Direccion</th>
+      <th scope="col">Plan</th>
+      <th scope="col">RTN</th>
+      <th scope="col">Accion</th>
 
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of empresas">
-        <th scope="row">1</th>
-        <td>{{item.nombre}}</td>
-        <td>{{item.descripcion}}</td>
-        <td>{{item.correo}}</td>
-        <td>{{item.direccion}}</td>
-        <td>{{item.plan}}</td>
-        <td>{{item.rtn}}</td>
-      </tr>
-   
-    </tbody>
-  </table>
-  
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of empresas">
+      <th scope="row">1</th>
+      <td>{{item.nombre}}</td>
+      <td>{{item.descripcion}}</td>
+      <td>{{item.correo}}</td>
+      <td>{{item.direccion}}</td>
+      <td>{{item.plan}}</td>
+      <td>{{item.rtn}}</td>
+      <td><button (click)="eliminarEmpresa(item._id);" class="btn btn-danger btn-sm">Eliminar</button></td>
+
+    </tr>
+
+  </tbody>
+</table>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Agregar nuevo
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Agregar nueva empresa</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Nombre de la empresa</label>
+              <input [(ngModel)]="empresa.nombre" type="text" class="form-control" id="inputEmail4" placeholder="Email">
+            </div>
+            <div class="form-group col-md-12">
+              <label for="inputPassword4">Descripcion</label>
+              <input [(ngModel)]="empresa.descripcion" type="text" class="form-control" id="inputPassword4" placeholder="Password">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputAddress">Correo</label>
+            <input [(ngModel)]="empresa.correo" type="email" class="form-control" id="inputAddress" placeholder="1234 Main St">
+          </div>
+          <div class="form-group">
+            <label for="inputAddress2">Contraseña</label>
+            <input [(ngModel)]="empresa.contrasenia" type="password" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputCity">RTN</label>
+              <input [(ngModel)]="empresa.rtn" type="text" class="form-control" id="inputCity">
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputCity">Direccion</label>
+                <input [(ngModel)]="empresa.direccion" type="text" class="form-control" id="inputCity">
+              </div>
+              <div class="form-group col-md-12">
+                <label for="inputState">Estado</label>
+                <select [(ngModel)]="empresa.estado" id="inputState" class="form-control">
+                  <option value="Activo">Seleccione un estado</option>
+                  <option value="true">Activo</option>
+                  <option value="false">Inactivo</option>
+                </select>
+              </div>
+              <div class="form-group col-md-12">
+                <label for="inputState">Plan</label>
+                <select [(ngModel)]="empresa.plan" class="form-control">
+                  <option *ngFor="let item of planes" value="{{ item.nombrePlan }}">{{ item.nombrePlan }}</option>
+                  
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary" (click)="agregarEmpresa();">Guardar Cambios</button>
+        </div>
+      </div>
+    </div>
+  </div>

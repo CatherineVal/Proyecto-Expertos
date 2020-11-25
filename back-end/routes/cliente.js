@@ -14,10 +14,11 @@ router.post('/', function (req, res) {
     let cliente = new Cliente({
         nombre: body.nombre,
         apellido: body.apellido,
+        usuario: body.usuario,
         correo: body.correo,
         contrasenia: body.contrasenia,
         compras: [],
-        estado: body.estado
+        estado: Boolean(body.estado)
     });
 
     cliente.save((error, nuevoCliente) => {
@@ -31,7 +32,7 @@ router.post('/', function (req, res) {
 
 router.get('/', (req, res) => {
 
-    Cliente.find({}, { nombre: true, apellido: true, usuario: true, correo: true, compras: true }).then(clientes => {
+    Cliente.find({}, { nombre: true, apellido: true, usuario: true, correo: true, compras: true, estado: true }).then(clientes => {
         res.send(clientes);
         res.end()
     });
@@ -41,11 +42,25 @@ router.get('/', (req, res) => {
 
 router.get('/:idCliente', (req, res) => {
     let idCliente = req.params.idCliente;
-    Cliente.find({ _id: idCliente }, { nombre: true, apellido: true, usuario: true, correo: true, compras: true }).then(clientes => {
+    Cliente.find({ _id: idCliente }, { nombre: true, apellido: true, usuario: true, correo: true, compras: true, estado:true }).then(clientes => {
         res.send(clientes[0]);
         res.end()
     });
 
+});
+
+
+router.delete('/:idCliente', (req, res) => {
+
+    Cliente.remove({ _id: req.params.idCliente })
+        .then((data) => {
+            res.json(data);
+            res.end();
+        })
+        .catch((erro) => {
+            res.json(error);
+            res.end();
+        })
 });
 
 // Agreagar priductos a cliete
@@ -97,7 +112,7 @@ router.post('/:idCliente/compras/eliminar/:idProducto', function (req, res) {
             }
         }
     ).then(result => {
-        res.send({result, mensaje:'Producto eliminado con exito'});
+        res.send({ result, mensaje: 'Producto eliminado con exito' });
         res.end();
     }).catch(error => {
         res.send(error);

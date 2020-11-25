@@ -34,7 +34,7 @@ router.post( '/', function(req, res){
 
 router.get('/',(req, res)=>{
 
-    Empresa.find({},{nombre: true, descripcion: true, correo:true, direccion:true, plan:true, rtn: true, productos:true}).then( empresas => {
+    Empresa.find({},{nombre: true, descripcion: true, correo:true, direccion:true, plan:true, rtn: true, productos:true, estado: true}).then( empresas => {
         res.send(empresas);
         res.end();
     });
@@ -46,7 +46,7 @@ router.get('/',(req, res)=>{
 router.get('/:idEmpresa',(req, res)=>{
     let idEmpresa = req.params.idEmpresa;
 
-    Empresa.find({_id:idEmpresa},{nombre:true, descripcion:true, rtn:true, correo:true, direccion:true, plan:true, productos: true, banco:true, productos: true}).then( empresas => {
+    Empresa.find({_id:idEmpresa},{nombre:true, descripcion:true, rtn:true, correo:true, direccion:true, plan:true, estado: true, productos: true, banco:true, productos: true}).then( empresas => {
         res.send(empresas[0]);
         res.end();
     });
@@ -83,7 +83,7 @@ router.post('/:idEmpresa/productos', function (req, res) {
 });
 
 //eliminar productos
-router.post('/:idEmpresa/productos/eliminar/:idProducto', function (req, res) {
+router.delete('/:idEmpresa/productos/eliminar/:idProducto', function (req, res) {
 
     let body = req.body;
     let idEmpresa = req.params.idEmpresa;
@@ -109,6 +109,19 @@ router.post('/:idEmpresa/productos/eliminar/:idProducto', function (req, res) {
 });
 
 
+router.delete('/:idEmpresa', (req, res) => {
 
+Empresa.remove({ _id: req.params.idEmpresa })
+        .then((data) => {
+            res.json(data);
+            res.end();
+        })
+        .catch((erro) => {
+            res.json(error);
+            res.end();
+        })
+});
+
+;
 
 module.exports = router;

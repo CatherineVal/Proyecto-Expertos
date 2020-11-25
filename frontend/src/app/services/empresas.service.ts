@@ -19,6 +19,10 @@ export class EmpresasService {
     return this.http.post(this.urlAppi, empresa);
     
   }
+  eliminarEmpresas(id:any){
+    return this.http.delete(this.urlAppi + '/' + id);
+    
+  }
 
   obtenerEmpresa(idEmpresa:any){
     return this.http.get(`${this.urlAppi}/${idEmpresa}`); // tambien se puede concatener con +

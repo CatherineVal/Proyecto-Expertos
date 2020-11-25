@@ -21,6 +21,11 @@ export class ClientesService {
     
   }
 
+  eliminarCliente(id:any){
+    return this.http.delete(this.urlAppi + '/' + id);
+    
+  }
+
   obtenerCliente(idCliente:any){
     return this.http.get(`${this.urlAppi}/${idCliente}`); // tambien se puede concatener con +
     //return this.http.get(this.urlAppi + '/' + idCliente);

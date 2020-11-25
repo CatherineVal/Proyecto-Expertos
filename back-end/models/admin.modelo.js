@@ -10,6 +10,7 @@ let esquema = new Schema({
     contrasenia: { type: String },
     role: { type: String },
     estado: { type: Boolean , default:true}
+    
 
 });
 

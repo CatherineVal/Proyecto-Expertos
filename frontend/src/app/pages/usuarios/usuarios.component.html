@@ -4,6 +4,7 @@
             <th scope="col">#</th>
             <th scope="col">Nombre</th>
             <th scope="col">correo</th>
+            <th scope="col">Accion</th>
 
         </tr>
     </thead>
@@ -11,10 +12,74 @@
         <tr *ngFor="let item of usuarios; index as i">
             <th scope="row">{{ i + 1 }}</th>
             <td>{{item.nombre}}</td>
-            <td>{{item.correo}}</td> 
-            <td><button class="btn btn-danger btn-sm">eliminar</button></td>
+            <td>{{item.correo}}</td>
+            <td><button (click)="eliminarUsuario(item._id)" class="btn btn-danger btn-sm">eliminar</button></td>
         </tr>
-       
-    </tbody>
-</table>
 
+    </tbody>
+
+</table>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">
+    Agregar
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Nuevo administrador</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid" >
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Nombre</label>
+                            <input [(ngModel)]="usuario.nombre" type="text" class="form-control" id="inputEmail4" placeholder="Email">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword4">Apellido</label>
+                            <input [(ngModel)]="usuario.apellido" type="text" class="form-control" id="inputPassword4" placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputAddress">Correo</label>
+                        <input [(ngModel)]="usuario.correo" type="email" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputAddress2">Contraseña</label>
+                        <input [(ngModel)]="usuario.contrasenia" type="password" class="form-control" id="inputAddress2"
+                            placeholder="Apartment, studio, or floor">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label for="inputCity">Estado</label>
+                            <select [(ngModel)]="usuario.estado" class="form-control">
+                                <option value="activo">Seleccione un estado</option>
+                                <option value="true">Activo</option>
+                                <option value="flase">Inactivo</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label for="inputCity">Rol</label>
+                            <select [(ngModel)]="usuario.rol" class="form-control">
+                                <option *ngFor="let item of roles" value="{{ item.nombre }}">{{ item.nombre }}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary btn-sm" (click)="agregarUsuario();" >Guardar cambios</button>
+            </div>
+        </div>
+    </div>
+</div>
