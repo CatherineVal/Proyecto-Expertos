@@ -20,8 +20,16 @@ import { PlanesComponent } from './pages/planes/planes.component';
 import { RolesComponent } from './pages/roles/roles.component';
 import { EmpresasComponent } from './pages/empresas/empresas.component';
 import { PlantillasComponent } from './pages/plantillas/plantillas.component';
-import { NuevoRoleComponent } from './pages/nuevo-role/nuevo-role.component';
+
 import { NavbarComponent } from './componente/navbar/navbar.component';
+import { SidebarEmpresaComponent } from './componente/sidebar-empresa/sidebar-empresa.component';
+import { BancoImgComponent } from './pages/banco-img/banco-img.component';
+import { DashboardEmpresaComponent } from './pages/dashboard-empresa/dashboard-empresa.component';
+import { BancoVideosComponent } from './pages/banco-videos/banco-videos.component';
+import { BancoArchivosComponent } from './pages/banco-archivos/banco-archivos.component';
+import { AdministrarPagesComponent } from './pages/administrar-pages/administrar-pages.component';
+import { ProductosComponent } from './pages/productos/productos.component';
+import { CategoriasComponent } from './pages/categorias/categorias.component';
 
 
 
@@ -53,9 +61,41 @@ import { NavbarComponent } from './componente/navbar/navbar.component';
     
     PlantillasComponent,
     
-    NuevoRoleComponent,
+    
     
     NavbarComponent,
+    
+    
+    
+    SidebarEmpresaComponent,
+    
+    
+    
+    BancoImgComponent,
+    
+    
+    
+    DashboardEmpresaComponent,
+    
+    
+    
+    BancoVideosComponent,
+    
+    
+    
+    BancoArchivosComponent,
+    
+    
+    
+    AdministrarPagesComponent,
+    
+    
+    
+    ProductosComponent,
+    
+    
+    
+    CategoriasComponent,
     
    
     

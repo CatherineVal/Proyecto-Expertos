@@ -18,6 +18,11 @@ export class PlanService {
     
   }
 
+  eliminarPlan(id:any){
+    return this.http.delete(this.urlAppi + '/' + id);
+    
+  }
+
   obtenerPlan(idPlan:any){
     return this.http.get(`${this.urlAppi}/${idPlan}`); // tambien se puede concatener con +
     //return this.http.get(this.urlAppi + '/' + idCliente);

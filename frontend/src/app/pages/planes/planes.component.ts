@@ -8,6 +8,11 @@ import {PlanService} from 'src/app/services/plan.service';
 })
 export class PlanesComponent implements OnInit {
   plan: any;
+  planAgg: any={
+    nombre: '',
+    descripcion:'',
+    precio:'',
+  }
   constructor(private planService: PlanService) {
     this.obtenerPlanes();
    }
@@ -25,4 +30,24 @@ export class PlanesComponent implements OnInit {
     });
   }
   
+  agregarPlan() {
+    console.log(this.planAgg);
+    this.planService.guardarPlan(this.planAgg).subscribe((data: any) => {
+      if (data) {
+        console.log(data);
+        this.obtenerPlanes();
+      }
+    })
+  }
+  eliminarPlan(id) {
+    console.log(this.planAgg);
+    this.planService.eliminarPlan(id).subscribe((data: any) => {
+      if (data) {
+        console.log(data);
+        this.obtenerPlanes();
+      }
+    })
+  }
+
+
 }

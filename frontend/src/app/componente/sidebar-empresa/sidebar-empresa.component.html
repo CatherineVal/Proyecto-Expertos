@@ -1,0 +1,34 @@
+<nav id="sidebar" style="height: 100%vh;">
+
+    <div class="custom-menu d-none">
+        <button type="button" id="sidebarCollapse" class="btn btn-primary">
+        </button>
+    </div>
+    <div class="img bg-wrap text-center py-4" >
+        <div class="user-logo">
+            <img class="img-fluid" src="../../../assets/img/Logo.png" alt="">
+            <h3>Nombre Usuario</h3>
+        </div>
+    </div>
+    <ul class="list-unstyled components mb-5">
+        <li class="">
+            <a [routerLink]="['/dashboardEmpresa/bancoImg']"  routerLinkActive="active"><span class="fa fa-home mr-3"></span>Banco Imagenes</a>
+        </li>
+        <li>
+            <a [routerLink]="['/dashboardEmpresa/bancoVideos']"   routerLinkActive="active"><span class="fa fa-download mr-3 notif"></span>Banco videos</a>
+        </li>
+        <li>
+            <a [routerLink]="['/dashboardEmpresa/bancoArchivos']"  routerLinkActive="active" ><span class="fa fa-gift mr-3"></span>Banco Archivos</a>
+        </li>
+        <li>
+            <a [routerLink]="['/dashboardEmpresa/administrarPages']"  routerLinkActive="active"><span class="fa fa-trophy mr-3"></span>Administrar paginas</a>
+        </li>
+        <li>
+            <a [routerLink]="['/dashboardEmpresa/productos']"  routerLinkActive="active"><span class="fa fa-cog mr-3"></span>Productos</a>
+        </li>
+        <li>
+            <a [routerLink]="['/dashboardEmpresa/categorias']"  routerLinkActive="active"><span class="fa fa-cog mr-3"></span>Categorias</a>
+        </li>
+    </ul>
+
+</nav>
