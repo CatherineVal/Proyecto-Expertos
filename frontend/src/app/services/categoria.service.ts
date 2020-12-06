@@ -1,0 +1,33 @@
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class CategoriaService {
+
+  constructor( private http: HttpClient) { }
+  
+  urlAppi: string = 'http://localhost:3000/categoria';
+  
+  obtenerCategorias() {
+    return this.http.get(this.urlAppi);
+  }
+
+  agregarCategoria(categoria:any){
+    return this.http.post(this.urlAppi, categoria);
+    
+  }
+  eliminarCategoria(id:any){
+    return this.http.delete(this.urlAppi + '/' + id);
+    
+  }
+  guardarCategoria(cliente:any){
+    return this.http.post(this.urlAppi, cliente);
+    
+  }
+
+  obtenerCategoria(idCategoria:any){
+    return this.http.get(`${this.urlAppi}/${idCategoria}`); 
+  }
+}

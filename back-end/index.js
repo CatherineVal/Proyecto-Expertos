@@ -17,6 +17,8 @@ var rutaEmpresa = require('./routes/empresa');
 var rutaCliente = require('./routes/cliente');
 var rutaAdmin = require('./routes/admin');
 var rutaPlan = require('./routes/plan');
+var rutaCategoria = require('./routes/categoria');
+
 
 
 
@@ -32,6 +34,8 @@ app.use( '/empresa', rutaEmpresa );
 app.use( '/cliente', rutaCliente );
 app.use( '/admin', rutaAdmin );
 app.use( '/plan', rutaPlan );
+app.use( '/categoria', rutaCategoria );
+
 
 
 

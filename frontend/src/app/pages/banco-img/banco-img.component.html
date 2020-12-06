@@ -1,1 +1,8 @@
-<p>banco-img works!</p>
+<input type="file" (change)="subirImagen($event);">
+<img *ngIf="urlImg" src="{{urlImg}}" alt="">
+
+<div class="row">
+    <div *ngFor="let item of imagenes" class="col-md-3">
+        <img class="img-fluid" src="{{item.url}}" alt="">
+    </div>
+</div>

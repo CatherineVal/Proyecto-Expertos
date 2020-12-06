@@ -8,8 +8,16 @@ import { Component, OnInit } from '@angular/core';
 export class BancoVideosComponent implements OnInit {
 
   constructor() { }
+  idEmpresa: any;
 
   ngOnInit(): void {
+
+    this.idEmpresa = window.localStorage.getItem('idEmpresa');
+
   }
 
+
+  obtenerEmpresa(){
+    
+  }
 }

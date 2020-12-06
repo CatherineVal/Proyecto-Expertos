@@ -1,1 +1,68 @@
-<p>categorias works!</p>
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Descripcion</th>
+        <th scope="col">Accion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of categorias; index as i">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{item.nombre}}</td>
+        <td>{{item.descripcion}}</td>
+        <td><button class="btn btn-danger btn-sm" (click)="eliminarCategoria(item._id)">Eliminar</button></td>
+
+         </tr>
+    </tbody>
+  </table>
+
+  <!-- Button trigger modal -->
+<button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+  Agregar nuevo producto
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Agregar nuevo producto</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Nombre</label>
+              <input [(ngModel)]="categoria.nombre" type="text" class="form-control" id="inputEmail4" placeholder="Email">
+            </div>
+            <div class="form-group col-md-12">
+              <label for="inputPassword4">Descripcion</label>
+              <input [(ngModel)]="categoria.descripcion" type="text" class="form-control" id="inputPassword4" placeholder="Password">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="inputCity">Subir Imagen</label>
+              <div *ngIf="imagenSubida" class="alert alert-success">
+                imagen subida correctamente
+              </div>
+              <div *ngIf="error" class="alert alert-danger">
+                Formulario invalido
+              </div>
+              <input type="file" (change)="subirImagen($event);" class="form-control" id="inputCity">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button"  [disabled]="!imagenSubida" class="btn btn-primary" (click)="agregarCategoria();"  >Guardar cambios</button>
+      </div>
+    </div>
+  </div>
+</div>

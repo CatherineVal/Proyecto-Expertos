@@ -13,7 +13,8 @@ let esquema = new Schema({
     productos: { type: Array },
     plan: { type: String },
     estado: { type: Boolean, default: true},
-    descripcion : {type: String}
+    descripcion : {type: String},
+    paginas : {type: Array}
 
 });
 
