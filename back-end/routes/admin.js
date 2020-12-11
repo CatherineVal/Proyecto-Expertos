@@ -46,6 +46,23 @@ router.get('/:idAdmin', (req, res) => {
 });
 
 
+// LOGIN
+
+router.post('/login', function (req, res) {
+
+    Empresa.findOne({ correo: req.body.correo, contrasenia: req.body.contrasenia }, {})
+        .then((data) => {
+            res.json(data);
+            res.end();
+        })
+        .catch((error) => {
+            res.json(error);
+            res.end();
+        })
+});
+
+
+
 router.delete('/:idAdmin', (req, res) => {
 
     Admin.remove({ _id: req.params.idAdmin })
