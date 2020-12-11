@@ -1,19 +1,77 @@
 <table class="table">
-    <thead class="thead-dark">
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th *ngFor="let item of productos" scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-    </tbody>
-  </table>
-  
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Descripcion</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Imagen</th>
+      <th scope="col">Accion</th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of productos">
+      <th  scope="row">1</th>
+      <td>{{item.nombre}}</td>
+      <td>{{item.descripcion}}</td>
+      <td>{{item.precio}}</td>
+      <td> <img class="img-fluid" src="{{item.img}}" style="width: 50px; height: 50px;" alt="{{item.img}}"></td>
+      <td><button class="btn btn-danger btn-sm" (click)="eliminarProducto(item._id);">Eliminar</button></td>
+
+
+    </tr>
+  </tbody>
+</table>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Agregar Producto
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Agregue producto nuevo</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="formGroupExampleInput">Nombre del producto</label>
+          <input [(ngModel)]="producto.nombreProducto" type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+        </div>
+
+        <div class="form-group">
+          <label for="formGroupExampleInput">Descripcion</label>
+          <input [(ngModel)]="producto.descripcion" type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+        </div>
+
+        <div class="form-group">
+          <label for="formGroupExampleInput">Precio</label>
+          <input [(ngModel)]="producto.precio" type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput">URL imagen</label>
+          <input [(ngModel)]="producto.img" type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+        </div>
+
+        <div class="form-group">
+          <label for="formGroupExampleInput">Seleccione categoria</label>
+          <select [(ngModel)]="producto.categoria" name="" class="form-control" id="">
+            <option *ngFor="let item of categorias" value="">{{ item.nombre }}</option>
+          </select>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Clos</button>
+        <button type="button" class="btn btn-primary btn-sm" (click)="agregarPrudcto()">Guardar Cambios</button>
+      </div>
+    </div>
+  </div>
+</div>

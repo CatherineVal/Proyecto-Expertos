@@ -1,8 +1,15 @@
 <input type="file" (change)="subirImagen($event);">
-<img *ngIf="urlImg" src="{{urlImg}}" alt="">
 
 <div class="row">
-    <div *ngFor="let item of imagenes" class="col-md-3">
-        <img class="img-fluid" src="{{item.url}}" alt="">
+    <div *ngFor="let item of imagenes" class="col-md-4 col-sm-6 col-lg-4 mb-1">
+        <div class="card">
+            <img class="card-img-top" src="{{item.url}}" alt="Card image cap">
+            <div class="card-body">
+              <h6 class="card-title text-muted">{{item._id}}</h6>
+              <button (click)="eliminarImagen(item._id)" class="btn btn-primary btn-sm">Eliminar</button>
+            </div>
+          </div>
     </div>
+    
+
 </div>

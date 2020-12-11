@@ -30,6 +30,14 @@ import { BancoArchivosComponent } from './pages/banco-archivos/banco-archivos.co
 import { AdministrarPagesComponent } from './pages/administrar-pages/administrar-pages.component';
 import { ProductosComponent } from './pages/productos/productos.component';
 import { CategoriasComponent } from './pages/categorias/categorias.component';
+import { GaleriaComponent } from './pages/galeria/galeria.component';
+import { LoginEComponent } from './pages/login-e/login-e.component';
+import { SlidebarEComponent } from './pages/slidebar-e/slidebar-e.component';
+import { TarjetasComponent } from './pages/tarjetas/tarjetas.component';
+import { CompaniesComponent } from './pages/companies/companies.component';
+import { AdminCompaniesComponent } from './pages/admin-companies/admin-companies.component';
+import { LoginadminComponent } from './pages/loginadmin/loginadmin.component';
+import { LoginempresaComponent } from './pages/loginempresa/loginempresa.component';
 
 
 
@@ -96,6 +104,38 @@ import { CategoriasComponent } from './pages/categorias/categorias.component';
     
     
     CategoriasComponent,
+    
+    
+    
+    GaleriaComponent,
+    
+    
+    
+    LoginEComponent,
+    
+    
+    
+    SlidebarEComponent,
+    
+    
+    
+    TarjetasComponent,
+    
+    
+    
+    CompaniesComponent,
+    
+    
+    
+    AdminCompaniesComponent,
+    
+    
+    
+    LoginadminComponent,
+    
+    
+    
+    LoginempresaComponent,
     
    
     

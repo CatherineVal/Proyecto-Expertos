@@ -8,18 +8,18 @@ export class CategoriaService {
 
   constructor( private http: HttpClient) { }
   
-  urlAppi: string = 'http://localhost:3000/categoria';
+  urlAppi: string = 'http://localhost:3000/empresa';
   
   obtenerCategorias() {
     return this.http.get(this.urlAppi);
   }
 
-  agregarCategoria(categoria:any){
-    return this.http.post(this.urlAppi, categoria);
+  agregarCategoria(idEmpresa, categoria){
+    return this.http.post(this.urlAppi+'/categoria/'+idEmpresa , categoria);
     
   }
-  eliminarCategoria(id:any){
-    return this.http.delete(this.urlAppi + '/' + id);
+  eliminarCategoria(idEmpresa, idCategoria,){
+    return this.http.delete(this.urlAppi + '/' + idEmpresa + '/categoria/' +  idCategoria);
     
   }
   guardarCategoria(cliente:any){

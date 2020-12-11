@@ -18,7 +18,7 @@ export class BancoImgComponent implements OnInit {
 
     //window.localStorage.setItem('idEmpresa', '5f99a69f4384ae4168c36438')
 
-    this.idEmpresa = window.localStorage.getItem('idEmpresa');
+    this.idEmpresa = JSON.parse(window.localStorage.getItem('empresa'));
 
     this.obtenerImagenes();
   }
@@ -48,12 +48,21 @@ export class BancoImgComponent implements OnInit {
 
     this.serviceImagen.subirImagenNode(img, this.idEmpresa).subscribe((data: any) =>{
       console.log(data);
+      this.obtenerImagenes();
     });
   }
 
   obtenerImagenes(){
-    this.serviceEmpresa.obtenerEmpresa(this.idEmpresa).subscribe((data:any) => this.imagenes = data.banco);
+    this.serviceEmpresa.obtenerEmpresa(this.idEmpresa).subscribe((data:any) =>  this.imagenes = data.banco);
   }
 
+
+  eliminarImagen(id){
+    this.serviceImagen.eliminarImg(this.idEmpresa, id).subscribe((data:any) => this.obtenerImagenes());
+ 
+    console.log(id);
+
+    
+  }
 
 }

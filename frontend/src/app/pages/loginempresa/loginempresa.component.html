@@ -1,0 +1,35 @@
+<div class="fondo" style="background-image: url(../../../assets/img/fondologin.jpg);">
+  <div class="container">
+    <div class="backbox">
+      <div class="loginMsg">
+        <div class="textcontent">
+          <p class="title">¿No tienes una cuenta?</p>
+          <p>¡Registrate de manera gratuita!.</p>
+          <a [routerLink]="['/']" class="btn  btn-light ">Comenzar</a>
+        </div>
+      </div>
+    </div>
+    <!-- backbox -->
+
+    <div class="frontbox ">
+      <div class="login">
+        <h2>iniciar sesión</h2>
+        <div class="alert alert-danger" *ngIf="error" role="alert">
+          Datos incorrectos
+        </div>
+        <div class="inputbox">
+          <input type="text" [(ngModel)]="empresa.correo" name="email" placeholder="  email@email.com">
+          <input type="password" [(ngModel)]="empresa.contrasenia" name="password" placeholder="  PASSWORD">
+        </div>
+        <p>¿Olvidaste tu contraseña?</p>
+
+        <button (click)="login()" class="btn-primary">iniciar sesión</button>
+      </div>
+
+
+    </div>
+    <!-- frontbox -->
+  </div>
+
+
+</div>

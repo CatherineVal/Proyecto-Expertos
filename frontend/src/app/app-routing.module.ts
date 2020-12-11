@@ -20,6 +20,22 @@ import { BancoArchivosComponent } from './pages/banco-archivos/banco-archivos.co
 import { ProductosComponent } from './pages/productos/productos.component';
 import { CategoriasComponent } from './pages/categorias/categorias.component';
 import { AdministrarPagesComponent } from './pages/administrar-pages/administrar-pages.component';
+import { GaleriaComponent } from './pages/galeria/galeria.component';
+import { LoginEComponent } from './pages/login-e/login-e.component';
+import { SlidebarEComponent } from './pages/slidebar-e/slidebar-e.component';
+import { TarjetasComponent } from './pages/tarjetas/tarjetas.component';
+import { CompaniesComponent } from './pages/companies/companies.component';
+import { AdminCompaniesComponent } from './pages/admin-companies/admin-companies.component';
+import { LoginempresaComponent } from './pages/loginempresa/loginempresa.component';
+import { LoginadminComponent } from './pages/loginadmin/loginadmin.component';
+
+
+
+
+
+
+
+
 
 
 
@@ -30,6 +46,22 @@ const routes: Routes = [
   { path: '', component: LandingPageComponent },
   { path: 'login', component: LoginComponent },
   { path: 'admin', component: LoginAdministradorComponent },
+  { path: 'galeria', component: GaleriaComponent },
+  { path: 'loginempresa', component: LoginempresaComponent },
+  { path: 'loginadmin', component: LoginadminComponent },
+
+
+  { path: 'loginE', component: LoginEComponent },
+  { path: 'slidebarE', component: SlidebarEComponent },
+  { path: 'tarjetas', component: TarjetasComponent },
+  { path: 'companies/:idEmpresa/pages/:id', component: CompaniesComponent  },
+  { path: 'admin-companies/:idEmpresa/pages/:id', component: AdminCompaniesComponent },
+
+
+
+
+
+
   { path: 'registroCliente', component: RegistroClienteComponent },
   { path: 'registroEmpresa', component: RegistroEmpresaComponent },
   {

@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class ImagenService {
 
   constructor(private http: HttpClient) { }
-
+  urlAppi: string = 'http://localhost:3000/empresa';
   url: string = 'https://api.cloudinary.com/v1_1/dsxagbugw/image/upload';
   subirImagen(imagen) {
     return this.http.post('https://api.cloudinary.com/v1_1/dsxagbugw/image/upload', imagen);
@@ -15,6 +15,11 @@ export class ImagenService {
 
   subirImagenNode(imagen, idEmpresa) {
     return this.http.post('http://localhost:3000/empresa/image/'+idEmpresa , imagen);
+  }
+
+  eliminarImg(idEmpresa, idImagen){
+    return this.http.delete(`${this.urlAppi}/${idEmpresa}/imagen/${idImagen}`)
+  
   }
 
 }

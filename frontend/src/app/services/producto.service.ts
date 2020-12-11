@@ -6,16 +6,21 @@ import { Injectable } from '@angular/core';
 })
 export class ProductoService {
 
-  constructor( private http:HttpClient ) { }
+  constructor(private http: HttpClient) { }
 
-  url:String = 'http://localhost:3000/empresa';
+  url: String = 'http://localhost:3000/empresa';
 
-  agregarProducto(idEmpresa, producto){
+  agregarProducto(idEmpresa, producto) {
     return this.http.post(`${this.url}/${idEmpresa}/productos`, producto);
   }
 
-  obtenerProductos(idEmpresa){
+  obtenerProductos(idEmpresa) {
     return this.http.get(`${this.url}/${idEmpresa}/productos`);
+  }
+
+  eliminarProducto(idEmpresa, idProducto) {
+    return this.http.delete(`${this.url}/${idEmpresa}/productos/eliminar/${idProducto}`);
+
   }
 
 }

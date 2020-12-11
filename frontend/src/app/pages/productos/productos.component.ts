@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CategoriaService } from 'src/app/services/categoria.service';
 import { EmpresasService } from 'src/app/services/empresas.service';
 import { ImagenService } from 'src/app/services/imagen.service';
 import { ProductoService } from 'src/app/services/producto.service';
@@ -16,14 +17,19 @@ export class ProductosComponent implements OnInit {
     img: '',
     categoria: '',
   }
+
   idEmpresa:any;
   productos:any;
-  constructor(private serviceImagen: ImagenService, private serviceEmpresa: EmpresasService, private serviceProducto:ProductoService) { }
+  categorias:any;
+
+
+  constructor(private serviceImagen: ImagenService, private serviceEmpresa: EmpresasService, private serviceProducto:ProductoService, private serviceCategoria: CategoriaService) { }
 
   ngOnInit(): void {
-    this.idEmpresa = window.localStorage.getItem('idEmpresa');
+    this.idEmpresa = JSON.parse(window.localStorage.getItem('empresa'));
 
     this.obtenerProdcutos();
+    this.obtenerCategorias();
   }
 
   subirImagen(e) {
@@ -40,6 +46,21 @@ export class ProductosComponent implements OnInit {
     });
   }
 
+  validarCampos() {
+
+    if (this.producto.nombreProducto == '') return false;
+    if (this.producto.descripcion == '') return false;
+    if (this.producto.precio == '') return false;
+    if (this.producto.img== '') return false;
+    if (this.producto.categoria == '') return false;
+
+
+
+
+    return true;
+  }
+
+
   agregarPrudcto() {
     this.serviceProducto.agregarProducto(this.idEmpresa, this.producto).subscribe((data:any)=> {
       console.log(data);
@@ -53,4 +74,19 @@ export class ProductosComponent implements OnInit {
       console.log(data.productos);
     });
   }
+
+  obtenerCategorias(){
+    this.serviceEmpresa.obtenerEmpresa(this.idEmpresa).subscribe((data:any)=> {
+      this.categorias = data.categorias;
+      console.log(data);
+    });
+  }
+
+  eliminarProducto(idProducto){
+    this.serviceProducto.eliminarProducto(this.idEmpresa, idProducto).subscribe((data:any)=> {
+     this.obtenerProdcutos();
+      console.log(data);
+    });
+  }
+
 }

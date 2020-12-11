@@ -28,5 +28,9 @@ export class EmpresasService {
     return this.http.get(`${this.urlAppi}/${idEmpresa}`); // tambien se puede concatener con +
     //return this.http.get(this.urlAppi + '/' + idCliente);
   }
+  login(empresa){
+    return this.http.post(`${this.urlAppi}/login`, empresa); // tambien se puede concatener con +
+    //return this.http.get(this.urlAppi + '/' + idCliente);
+  }
 
 }

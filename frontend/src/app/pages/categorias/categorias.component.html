@@ -19,8 +19,8 @@
   </table>
 
   <!-- Button trigger modal -->
-<button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
-  Agregar nuevo producto
+<button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#exampleModal">
+  Agregar nuevo categoria
 </button>
 
 <!-- Modal -->
@@ -45,23 +45,11 @@
               <input [(ngModel)]="categoria.descripcion" type="text" class="form-control" id="inputPassword4" placeholder="Password">
             </div>
           </div>
-          <div class="form-row">
-            <div class="form-group col-md-12">
-              <label for="inputCity">Subir Imagen</label>
-              <div *ngIf="imagenSubida" class="alert alert-success">
-                imagen subida correctamente
-              </div>
-              <div *ngIf="error" class="alert alert-danger">
-                Formulario invalido
-              </div>
-              <input type="file" (change)="subirImagen($event);" class="form-control" id="inputCity">
-            </div>
-          </div>
         </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-        <button type="button"  [disabled]="!imagenSubida" class="btn btn-primary" (click)="agregarCategoria();"  >Guardar cambios</button>
+        <button type="button" class="btn btn-primary" (click)="agregarCategoria();"  >Guardar cambios</button>
       </div>
     </div>
   </div>

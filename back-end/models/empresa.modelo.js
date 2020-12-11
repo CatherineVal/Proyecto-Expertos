@@ -14,7 +14,8 @@ let esquema = new Schema({
     plan: { type: String },
     estado: { type: Boolean, default: true},
     descripcion : {type: String},
-    paginas : {type: Array}
+    paginas : {type: Array},
+    categorias : {type: Array}
 
 });
 

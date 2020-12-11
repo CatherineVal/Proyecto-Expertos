@@ -10,6 +10,8 @@ import { PaginaService } from 'src/app/services/pagina.service';
 export class AdministrarPagesComponent implements OnInit {
   paginas: any;
   idEmpresa: any;
+  error:boolean;
+
   pagina: any = {
     nombre: '',
     descripcion: '',
@@ -22,29 +24,50 @@ export class AdministrarPagesComponent implements OnInit {
   constructor(private serviceEmpresa: EmpresasService, private servicePagina: PaginaService) { }
 
   ngOnInit(): void {
-    this.idEmpresa = window.localStorage.getItem('idEmpresa');
+    this.idEmpresa = JSON.parse(window.localStorage.getItem('empresa'));
     this.obtenerPaginas();
   }
 
 
   obtenerPaginas() {
     this.serviceEmpresa.obtenerEmpresa(this.idEmpresa).subscribe((data: any) => {
-      console.log(data);
+     // console.log(data);
       this.paginas = data.paginas;
 
     });
   }
 
-  agregarPaginas() {
-    console.log(this.pagina);
-    this.servicePagina.guardarPagina(this.pagina, this.idEmpresa).subscribe((data: any) => {
-      console.log(data);
+  EliminarPaginas(pagina) {
+    this.servicePagina.eliminarPagina(this.idEmpresa, pagina).subscribe((data: any) => {
+    //  console.log(data);
       this.obtenerPaginas();
 
-
-    })
+    });
   }
 
+
+  agregarPaginas() {
+    //console.log(this.pagina);
+
+    if(this.validarCampos()){
+      this.servicePagina.guardarPagina(this.pagina, this.idEmpresa).subscribe((data: any) => {
+      //  console.log(data);
+        this.obtenerPaginas();
+      })
+    }else{
+      this.error = true;
+    }
+
+    
+  }
+
+  validarCampos() {
+
+    if (this.pagina.nombre == '') return false;
+    if (this.pagina.descripcion == '') return false;
+    if (this.pagina.urlLogo == '') return false;
+    return true;
+  }
 
 
 }

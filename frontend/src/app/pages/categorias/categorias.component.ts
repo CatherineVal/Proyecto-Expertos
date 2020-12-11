@@ -22,25 +22,17 @@ export class CategoriasComponent implements OnInit {
 
   }
 
-  constructor(private serviceCategoria: CategoriaService, private serviceImagen: ImagenService, private serviceEmpresa: EmpresasService) {
-    this.obtenerCategorias();
+  constructor(private serviceCategoria: CategoriaService, private serviceEmpresa: EmpresasService) {
   }
   ngOnInit(): void {
-    this.idEmpresa = window.localStorage.getItem('idEmpresa');
-    this.imagenSubida = false;
-
-    this.obtenerImagenes();
+    this.idEmpresa = JSON.parse(window.localStorage.getItem('empresa'));
+    this.obtenerCategorias();
   }
 
-  obtenerImagenes() {
-    this.serviceEmpresa.obtenerEmpresa(this.idEmpresa).subscribe((data: any) => this.imagenes = data.banco);
-  }
   obtenerCategorias() {
-    this.serviceCategoria.obtenerCategorias().subscribe((data: any) => {
+    this.serviceEmpresa.obtenerEmpresa(this.idEmpresa).subscribe((data: any) => {
       console.log(data);
-      this.categorias = data;
-      this.imagenSubida = false;
-
+      this.categorias = data.categorias;
     });
   }
 
@@ -53,27 +45,9 @@ export class CategoriasComponent implements OnInit {
   }
 
 
-
-  subirImagen(e) {
-    let imagen = e.target.files[0];
-    console.log(imagen);
-    const formData = new FormData();
-    formData.append('upload_preset', 'bancoImg');
-    formData.append('file', imagen);
-
-    this.serviceImagen.subirImagen(formData).subscribe((data: any) => {
-      this.urlImg = data.url;
-      this.imagenSubida = true;
-      console.log(data);
-      this.agregarImagenNode();
-
-    });
-  }
-
-
   eliminarCategoria(id) {
     console.log(this.categoria);
-    this.serviceCategoria.eliminarCategoria(id).subscribe((data: any) => {
+    this.serviceCategoria.eliminarCategoria(this.idEmpresa, id).subscribe((data: any) => {
       if (data) {
         console.log(data);
         this.obtenerCategorias();
@@ -81,23 +55,13 @@ export class CategoriasComponent implements OnInit {
     })
   }
 
-  agregarImagenNode() {
-    let img = {
-      nombre: 'fondo',
-      tipo: 'png',
-      url: this.urlImg,
-    }
 
-    this.serviceImagen.subirImagenNode(img, this.idEmpresa).subscribe((data: any) => {
-      console.log(data);
-    });
-  }
 
   agregarCategoria() {
     console.log(this.categoria);
 
     if (this.validarCampos()) {
-      this.serviceCategoria.guardarCategoria(this.categoria).subscribe((data: any) => {
+      this.serviceCategoria.agregarCategoria(this.idEmpresa, this.categoria).subscribe((data: any) => {
         if (data) {
           console.log(data);
           this.obtenerCategorias();

@@ -1,94 +1,103 @@
 <table class="table">
-    <thead class="thead-dark">
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Titulo </th>
-        <th scope="col">Descripcion</th>
-        <th scope="col">Palabra clave</th>
-        <th scope="col">Logo tipo</th>
-        <th scope="col">Accion</th>
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Titulo </th>
+      <th scope="col">Descripcion</th>
+      <th scope="col">Palabra clave</th>
+      <th scope="col">Logo tipo</th>
+      <th scope="col">Accion</th>
 
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of paginas; index as i">
-        <th scope="row">{{ i + 1 }}</th>
-        <td>{{item.nombre}}</td>
-        <td>{{item.descripcion}}</td>
-        <td>{{item.palabraClave}}</td>
-        <td>{{item.urlLogo}}</td>
-        <td><button class="btn btn-danger btn-sm">Eliminar</button></td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of paginas; index as i">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{item.nombre}}</td>
+      <td>{{item.descripcion}}</td>
+      <td>{{item.palabraClave}}</td>
+      <td>{{item.urlLogo}}</td>
 
-      </tr>
-    </tbody>
-  </table>
+      <td><button class="btn btn-danger btn-sm" (click)="EliminarPaginas(item._id);">Eliminar</button></td>
+
+    </tr>
+  </tbody>
+</table>
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#exampleModal">
-    Agregar nuevo
-  </button>
-  
-  <!-- Modal -->
-  <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Agregar nueva pagina</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <div>
-                <div class="form-row">
-                  <div class="form-group col-md-6">
-                    <label for="inputEmail4">Nombre</label>
-                    <input type="text" class="form-control" id="inputEmail4" placeholder="Email">
-                  </div>
-                  <div class="form-group col-md-6">
-                    <label for="inputPassword4">Descripcion</label>
-                    <input type="text" class="form-control" id="inputPassword4" placeholder="Password">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="inputAddress">palabra Clave</label>
-                  <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-                </div>
-                <div class="form-group">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="gridCheck">
-                      <label class="form-check-label" for="gridCheck">
-                        Encabezado
-                      </label>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="gridCheck">
-                      <label class="form-check-label" for="gridCheck">
-                        Pie de pagina
-                      </label>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="inputAddress">Url del logo</label>
-                    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-                  </div>
-                
-                <button type="submit" class="btn btn-primary">Sign in</button>
-            </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-primary">Guardar Cambios</button>
-        </div>
-      </div>
-    </div>
-  </div>
+  Agregar nuevo
+</button>
 
-  <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        ...
+<!-- Modal -->
+<div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog"
+  aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Agregar nueva pagina</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Nombre</label>
+              <input [(ngModel)]="pagina.nombre" type="text" class="form-control" id="inputEmail4" placeholder="Email">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputPassword4">Descripcion</label>
+              <input [(ngModel)]="pagina.descripcion" type="text" class="form-control" id="inputPassword4"
+                placeholder="Password">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputAddress">palabra Clave</label>
+            <input [(ngModel)]="pagina.palabraClave" type="text" class="form-control" id="inputAddress"
+              placeholder="1234 Main St">
+          </div>
+          <div class="form-group">
+            <div class="form-check">
+              <input [(ngModel)]="pagina.encabezado" class="form-check-input" type="checkbox" id="gridCheck">
+              <label class="form-check-label" for="gridCheck">
+                Encabezado
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-check">
+              <input [(ngModel)]="pagina.piePage" class="form-check-input" type="checkbox" id="gridCheck">
+              <label class="form-check-label" for="gridCheck">
+                Pie de pagina
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputAddress">Url del logo</label>
+            <input [(ngModel)]="pagina.urlLogo" type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+          </div>
+          <div *ngIf="error" class="alert alert-danger" role="alert">
+            Formulario invalido
+           </div>
+        </div>
+        
+      </div>
+
+      <div class="modal-footer">
+
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" (click)="agregarPaginas();">Guardar Cambios</button>
       </div>
     </div>
   </div>
+</div>
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      ...
+    </div>
+  </div>
+</div>
