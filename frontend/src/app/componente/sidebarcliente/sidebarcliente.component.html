@@ -1,0 +1,26 @@
+<nav id="sidebar">
+
+    <div class="custom-menu d-none">
+        <button type="button" id="sidebarCollapse" class="btn btn-primary">
+        </button>
+    </div>
+    <div class="img bg-wrap text-center py-4" >
+        <div class="user-logo">
+            <img class="img-fluid" src="../../../assets/img/Logo.png" alt="">
+            <h3>Nombre Usuario</h3>
+        </div>
+    </div>
+    <ul class="list-unstyled components mb-5">
+        <li class="">
+            <a [routerLink]="['/dashboardcliente/misproductos']" routerLinkActive="active"><span class="fa fa-home mr-3"></span>Mis productos</a>
+        </li>
+        <li class="">
+            <a [routerLink]="['/dashboardcliente/compraproductos']" routerLinkActive="active"><span class="fa fa-home mr-3"></span>Canasta</a>
+        </li>
+        <li class="">
+            <a [routerLink]="['/login']" routerLinkActive="active"><span class="fa fa-home mr-3"></span>Cerrar sesion</a>
+        </li>
+       
+    </ul>
+
+</nav>

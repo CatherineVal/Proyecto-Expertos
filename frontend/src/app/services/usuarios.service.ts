@@ -25,9 +25,10 @@ export class UsuariosService {
   }
 
   obtenerUsuarios(idUsuario:any){
-    return this.http.get(`${this.urlAppi}/${idUsuario}`); // tambien se puede concatener con +
-    //return this.http.get(this.urlAppi + '/' + idCliente);
+    return this.http.get(`${this.urlAppi}/${idUsuario}`); 
   }
 
-
+  login(admin){
+    return this.http.post(`${this.urlAppi}/login`, admin); 
+  }
 }

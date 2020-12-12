@@ -50,7 +50,7 @@ router.get('/:idAdmin', (req, res) => {
 
 router.post('/login', function (req, res) {
 
-    Empresa.findOne({ correo: req.body.correo, contrasenia: req.body.contrasenia }, {})
+    Admin.findOne({ correo: req.body.correo, contrasenia: req.body.contrasenia }, {})
         .then((data) => {
             res.json(data);
             res.end();

@@ -15,7 +15,8 @@ let esquema = new Schema({
     estado: { type: Boolean, default: true},
     descripcion : {type: String},
     paginas : {type: Array},
-    categorias : {type: Array}
+    categorias : {type: Array},
+  
 
 });
 

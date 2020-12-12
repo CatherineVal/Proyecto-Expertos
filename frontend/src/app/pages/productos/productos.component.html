@@ -1,4 +1,5 @@
-<table class="table">
+<h4 class="text-center text-primary">Productos</h4>
+<table class="table text-center table-bordered">
   <thead class="thead-dark">
     <tr>
       <th scope="col">#</th>
@@ -25,7 +26,7 @@
   </tbody>
 </table>
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+<button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#exampleModal">
   Agregar Producto
 </button>
 
@@ -35,7 +36,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Agregue producto nuevo</h5>
+        <h5 class="modal-title text-center" id="exampleModalLabel">Agregue producto nuevo</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -69,7 +70,7 @@
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Clos</button>
+        <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cerrar</button>
         <button type="button" class="btn btn-primary btn-sm" (click)="agregarPrudcto()">Guardar Cambios</button>
       </div>
     </div>

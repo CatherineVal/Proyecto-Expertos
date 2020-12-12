@@ -33,4 +33,8 @@ export class EmpresasService {
     //return this.http.get(this.urlAppi + '/' + idCliente);
   }
 
+  agregarEmpresa(empresa){
+    return this.http.post(this.urlAppi, empresa);
+  }
+
 }

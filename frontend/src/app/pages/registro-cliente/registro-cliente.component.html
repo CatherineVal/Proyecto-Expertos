@@ -1,72 +1,69 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">G-Service</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-      </ul>
-      <form class="form-inline my-2 my-lg-0"><br>
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-primary" type="submit">Search</button>
-      </form>
-    </div>
-  </nav>
+  <a class="navbar-brand" href="#">G-Service</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+    </ul>
+    <form class="form-inline my-2 my-lg-0"><br>
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
 
 <div class="card abs-center">
-    <div class="card-body">
-        <form>
-            <h2><p class="text-center">Ingreses sus datos</p></h2>
-            <div class="form-row">
-                <div class="col-12">
-                    <label for="inputNameCliente">Nombre completo</label>
-                    <input type="name" class="form-control" id="nombreCliente" placeholder="Nombre">
-                    <label for="inputNameCliente">Nombre Usuario</label>
-                    <input type="name" class="form-control" id="userName" placeholder="Nombre Usuario">
-                </div>
-              <div class="form-group col-md-6">
-                <label for="inputEmail4">Email</label>
-                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-              </div>
-              <div class="form-group col-md-6">
-                <label for="inputPassword4">Password</label>
-                <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group col-md-3">
-                <label for="inputCity">City</label>
-                <input type="text" class="form-control" id="inputCity">
-              </div>
-              <div class="form-group col-md-2">
-                <label for="inputZip">Edad</label>
-                <input type="text" class="form-control" id="edad">
-              </div>
-              <div class="form-group col-md-3">
-                <label for="inputState">Sexo</label>
-                <select id="sexo" class="form-control">
-                  <option selected>Seleccione</option>
-                  <option>Femenino</option>
-                  <option>Masculino</option>
-                  <option>Indefinido</option>
-                </select>
-              </div>
-              
-            </div>
-            <div class="form-group">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck">
-                <label class="form-check-label" for="gridCheck">
-                  Check me out
-                </label>
-              </div>
-            </div>
-            <div *ngIf="alertExito" class="alert alert-success text-center" role="alert">
-              <a href="#" class="alert-link ">Se a guardado exitosamente</a>
-              </div>
-            <button (click)="alert()" type="button" class="btn btn-primary">Save</button>
-            <button type="button" class="btn btn-primary">Sign in</button>
-          </form>
+  <h2>¡Registrate ahora!</h2>
+  <div class="card  p-1 shadow-lg">
+    <div class="card-body ">
+      <form>
+        <h4>
+          <p class="text-center text-primary">Ingreses sus datos</p>
+        </h4>
+        <div class="form-row">
+          <div class="col-12">
+            <label for="inputNameCliente">Nombre completo</label>
+            <input type="name" class="form-control" id="nombreCliente" placeholder="Nombre">
+            <label for="inputNameCliente">Nombre Usuario</label>
+            <input type="name" class="form-control" id="userName" placeholder="Nombre Usuario">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Email</label>
+            <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputPassword4">Password</label>
+            <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-3">
+            <label for="inputCity">City</label>
+            <input type="text" class="form-control" id="inputCity">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="inputZip">Edad</label>
+            <input type="text" class="form-control" id="edad">
+          </div>
+          <div class="form-group col-md-3">
+            <label for="inputState">Sexo</label>
+            <select id="sexo" class="form-control">
+             
+              <option>Femenino</option>
+            </select>
+          </div>
+
+        </div>
+      
+        <div *ngIf="alertExito" class="alert alert-success text-center" role="alert">
+          <a href="#" class="alert-link ">Se a guardado exitosamente</a>
+        </div>
+        <button (click)="alert()" type="button" class="btn btn-primary">Save</button>
+        <button type="button" class="btn btn-primary">Sign in</button>
+      </form>
     </div>
   </div>
-
+</div>

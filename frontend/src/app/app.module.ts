@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from "@angular/common";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
+import { CKEditorModule   } from '@ckeditor/ckeditor5-angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './componente/app.component';
@@ -38,6 +39,15 @@ import { CompaniesComponent } from './pages/companies/companies.component';
 import { AdminCompaniesComponent } from './pages/admin-companies/admin-companies.component';
 import { LoginadminComponent } from './pages/loginadmin/loginadmin.component';
 import { LoginempresaComponent } from './pages/loginempresa/loginempresa.component';
+import { SidebarclienteComponent } from './componente/sidebarcliente/sidebarcliente.component';
+import { DashboardclienteComponent } from './pages/dashboardcliente/dashboardcliente.component';
+import { MisproductosComponent } from './pages/misproductos/misproductos.component';
+import { CompraproductosComponent } from './pages/compraproductos/compraproductos.component';
+import { NavbarempresaComponent } from './component/navbarempresa/navbarempresa.component';
+import { NavbaradminComponent } from './componente/navbaradmin/navbaradmin.component';
+import { NavbarpaginasComponent } from './pages/navbarpaginas/navbarpaginas.component';
+import { FooterpaginasComponent } from './pages/footerpaginas/footerpaginas.component';
+import { ImagenComponent } from './components/imagen/imagen.component';
 
 
 
@@ -137,6 +147,42 @@ import { LoginempresaComponent } from './pages/loginempresa/loginempresa.compone
     
     LoginempresaComponent,
     
+    
+    
+    SidebarclienteComponent,
+    
+    
+    
+    DashboardclienteComponent,
+    
+    
+    
+    MisproductosComponent,
+    
+    
+    
+    CompraproductosComponent,
+    
+    
+    
+    NavbarempresaComponent,
+    
+    
+    
+    NavbaradminComponent,
+    
+    
+    
+    NavbarpaginasComponent,
+    
+    
+    
+    FooterpaginasComponent,
+    
+    
+    
+    ImagenComponent,
+    
    
     
   ],
@@ -146,7 +192,8 @@ import { LoginempresaComponent } from './pages/loginempresa/loginempresa.compone
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CKEditorModule
 
   ],
   providers: [],

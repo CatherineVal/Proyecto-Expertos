@@ -1,0 +1,11 @@
+.text-primary{
+    color: #d64e82 !important;
+  }
+  .bg-primary{
+    background-color: #d64e82 !important;
+  }
+  
+  .btn-primary{
+    background-color: #d64e82 !important;
+    border-color: white !important;
+  }  

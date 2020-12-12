@@ -5,7 +5,7 @@ var nombreBaseDatos ="dbProyectoExpertos";
 
 class Database{
     constructor(){
-        this.conectar();
+        this.conexionMongoAtlas();
     }
 
     conectar(){
@@ -19,7 +19,7 @@ class Database{
     }
 
     conexionMongoAtlas(){
-        mongoose.connect(`mongodb+srv://leonardo:calix1994@bloggerweb-ykwq4.mongodb.net/BloggerWeb?retryWrites=true&w=majority`)
+        mongoose.connect(`mongodb+srv://catherine:Cathy1234@proyectoexpertos.z08lb.mongodb.net/dbproyecto?retryWrites=true&w=majority`)
         .then(()=>{
             console.log("Se conecto a la base de datos...");
         })

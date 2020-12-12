@@ -1,0 +1,6 @@
+
+<nav>
+	<a *ngFor="let item of paginas" [routerLink]="['/companies/'+ idEmpresa + '/pages/' + item._id]"  >{{item.nombre}}</a>
+	<div class="animation start-home"></div>
+</nav>
+

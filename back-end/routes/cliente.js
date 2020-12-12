@@ -121,5 +121,20 @@ router.post('/:idCliente/compras/eliminar/:idProducto', function (req, res) {
 });
 
 
+//login
+router.post('/login', function (req, res) {
+
+    Cliente.findOne({ correo: req.body.correo, contrasenia: req.body.contrasenia }, {})
+        .then((data) => {
+            res.json(data);
+            res.end();
+        })
+        .catch((error) => {
+            res.json(error);
+            res.end();
+        })
+});
+
+
 
 module.exports = router;

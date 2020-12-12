@@ -16,12 +16,12 @@
         <div class="login">
           <h2>iniciar sesión</h2>
           <div class="inputbox">
-            <input type="email"  name="email" placeholder="Ingrese su email">
+            <input [(ngModel)]="cliente.correo"  type="email"  name="email" placeholder="Ingrese su email">
            
-            <input type="password"  name="password" placeholder="Ingrese su contraseña">
+            <input [(ngModel)]="cliente.contrasenia" type="password" name="password" placeholder="Ingrese su contraseña">
           </div>
           <p>¿Olvidaste tu contraseña?</p>
-          <button class="btn-primary">iniciar sesión</button>
+          <button (click)="login()" class="btn-primary">iniciar sesión</button>
         </div>
 
   

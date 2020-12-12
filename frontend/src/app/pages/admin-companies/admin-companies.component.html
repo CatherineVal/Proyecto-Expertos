@@ -1,1 +1,62 @@
-<p>admin-companies works!</p>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5 shadow-lg">
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <img src="../../../assets/img/LOGO DE LA CATHERINA JPG copia.png" width="60" height="60"
+                class="d-inline-block align-top" alt="">
+            <button [routerLink]="['/dashboardEmpresa/bancoImg']" routerLinkActive="active"
+                class="btn btn-primary my-2 my-sm-0 btn-sm" type="submit">Home</button>
+        </form>
+    </div>
+</nav>
+
+<div class="card text-center">
+
+    <div class="card-body">
+        <h5 class="card-title text-primary">Agregar Shortcuts</h5>
+    </div>
+    <div class="card-footer text-muted">
+
+    </div>
+</div>
+
+
+
+<div class="container m-12 p-4">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <div class="container p-2">
+                        <a class="nav-link" [routerLink]="['/companies/'+ idEmpresa + '/pages/' + idPagina]" target="_blank">Ver cambios</a>
+                        <ckeditor style="height: 200px;" [(ngModel)]="model.editorData" [editor]="Editor"></ckeditor>
+                    </div>
+
+                    <ul class="nav nav-pills">
+                        <li class="nav-item">
+                          <button class="btn nav-link active btn-sm" href="#" [disabled]="!desabilitar" (click)="obtenerData()" >guardar</button>
+                        </li>
+                        <li class="nav-item">
+                          <button class="nav-link" (click)="actulizarContendio()">Actualizar</button>
+                        </li>
+                      </ul>
+
+
+                    <nav class="nav nav-pills nav-fill">
+                      
+                     
+                        
+                    </nav>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

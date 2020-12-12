@@ -28,6 +28,15 @@ import { CompaniesComponent } from './pages/companies/companies.component';
 import { AdminCompaniesComponent } from './pages/admin-companies/admin-companies.component';
 import { LoginempresaComponent } from './pages/loginempresa/loginempresa.component';
 import { LoginadminComponent } from './pages/loginadmin/loginadmin.component';
+import { DashboardclienteComponent } from './pages/dashboardcliente/dashboardcliente.component';
+import { CompraproductosComponent } from './pages/compraproductos/compraproductos.component';
+import { MisproductosComponent } from './pages/misproductos/misproductos.component';
+import { NavbarpaginasComponent } from './pages/navbarpaginas/navbarpaginas.component';
+import { FooterpaginasComponent } from './pages/footerpaginas/footerpaginas.component';
+
+
+
+
 
 
 
@@ -49,6 +58,10 @@ const routes: Routes = [
   { path: 'galeria', component: GaleriaComponent },
   { path: 'loginempresa', component: LoginempresaComponent },
   { path: 'loginadmin', component: LoginadminComponent },
+  { path: 'navbarpaginas', component: NavbarpaginasComponent },
+  { path: 'footerpaginas', component: FooterpaginasComponent },
+
+
 
 
   { path: 'loginE', component: LoginEComponent },
@@ -56,10 +69,6 @@ const routes: Routes = [
   { path: 'tarjetas', component: TarjetasComponent },
   { path: 'companies/:idEmpresa/pages/:id', component: CompaniesComponent  },
   { path: 'admin-companies/:idEmpresa/pages/:id', component: AdminCompaniesComponent },
-
-
-
-
 
 
   { path: 'registroCliente', component: RegistroClienteComponent },
@@ -73,9 +82,6 @@ const routes: Routes = [
       { path: 'empresas', component: EmpresasComponent },
       { path: 'plantillas', component: PlantillasComponent },
       { path: 'planes', component: PlanesComponent },
-
-
-
     ]
   },
 
@@ -87,14 +93,15 @@ const routes: Routes = [
       { path: 'productos', component: ProductosComponent },
       { path: 'categorias', component: CategoriasComponent },
       { path: 'administrarPages', component: AdministrarPagesComponent },
-
-
-
-
-
     ]
-  }
+  },
 
+  {
+    path: 'dashboardcliente', component: DashboardclienteComponent, children: [
+      { path: 'compraproductos', component: CompraproductosComponent },
+      { path: 'misproductos', component: MisproductosComponent },
+    ]
+  },
 
 ];
 

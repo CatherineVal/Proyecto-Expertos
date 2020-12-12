@@ -11,8 +11,8 @@ import { EmpresasService } from 'src/app/services/empresas.service';
 export class LoginempresaComponent implements OnInit {
 
   empresa:any = {
-    correo: '',
-    contrasenia: ''
+    correo: 'skype@skype.es',
+    contrasenia: 'asd.129'
   }
   error:boolean;
 
@@ -36,7 +36,7 @@ export class LoginempresaComponent implements OnInit {
       }else{
         //console.log('Existe');
         window.localStorage.setItem('empresa', JSON.stringify(data._id));
-        this.router.navigate(['/dashboardEmpresa']);
+        this.router.navigate(['/dashboardEmpresa/bancoImg']);
       }
     });
   }

@@ -31,6 +31,8 @@ export class ClientesService {
     //return this.http.get(this.urlAppi + '/' + idCliente);
   }
 
-
+  login(cliente){
+    return this.http.post(`${this.urlAppi}/login`, cliente); 
+  }
 
 }

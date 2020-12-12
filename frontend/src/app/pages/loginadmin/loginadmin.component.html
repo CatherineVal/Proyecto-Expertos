@@ -5,6 +5,7 @@
         <div class="loginMsg">
           <div class="textcontent">
             <h2 class="h2" color="white">¡Bienvenido!</h2>
+            
                     
           </div>
         </div>
@@ -14,12 +15,15 @@
       <div class="frontbox ">
         <div class="login">
           <h2>iniciar sesión</h2>
+          <div class="alert alert-danger" *ngIf="error" role="alert">
+            Datos incorrectos
+          </div>
           <div class="inputbox">
-            <input type="text" name="email" placeholder="  email@gservice.com">
-            <input type="password" name="password" placeholder="  PASSWORD">
+            <input [(ngModel)]="admin.correo" type="text" name="email" placeholder="  email@gservice.com">
+            <input [(ngModel)]="admin.contrasenia" type="password" name="password" placeholder="  contraseña">
           </div>
           <p>¿Olvidaste tu contraseña?</p>
-          <button class="btn-primary">iniciar sesión</button>
+          <button (click)="login()" class="btn-primary">iniciar sesión</button>
         </div>
 
   

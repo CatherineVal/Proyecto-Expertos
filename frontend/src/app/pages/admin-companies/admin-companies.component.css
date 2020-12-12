@@ -1,0 +1,22 @@
+:host ::ng-deep .ck-editor__editable_inline {
+    min-height: 200px;
+}
+
+.text-primary{
+    color: #d64e82 !important;
+}
+
+.bg-primary{
+    background-color: #d64e82 !important;
+}
+
+.btn-primary{
+    background-color: #d64e82 !important;
+    border-color: white !important;
+}
+
+.btn-outline-primary {
+    outline: #ffffff;
+    color:  #d64e82 !important;
+    border-color:#d64e82 !important;
+}
