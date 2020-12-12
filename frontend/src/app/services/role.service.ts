@@ -18,7 +18,13 @@ export class RoleService {
     return this.http.post(this.urlAppi, role);
     
   }
+ 
 
+
+  eliminarRole(id:any){
+    return this.http.delete(this.urlAppi + '/' + id);
+    
+  }
   obtenerRole(idRole:any){
     return this.http.get(`${this.urlAppi}/${idRole}`); // tambien se puede concatener con +
     //return this.http.get(this.urlAppi + '/' + idCliente);

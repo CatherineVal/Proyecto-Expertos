@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ClientesService } from 'src/app/services/clientes.service';
 
 @Component({
   selector: 'app-registro-cliente',
@@ -8,7 +10,15 @@ import { Component, OnInit } from '@angular/core';
 export class RegistroClienteComponent implements OnInit {
 
   alertExito: boolean;
-  constructor() { }
+  cliente: any ={
+    nombre:'',
+    apellido:'',
+    usuario:'',
+    correo:'',
+    contrasenia:'',
+
+  }
+  constructor(private clienteService: ClientesService, private router: Router) { }
 
   ngOnInit(): void {
     this.alertExito = false;
@@ -17,8 +27,25 @@ export class RegistroClienteComponent implements OnInit {
 
   alert(){
     this.alertExito = true;
-
-    setTimeout(() => { this.alertExito = false; }, 3000);
   }
+
+  
+  guardar() {
+    this.alertExito = true;
+    console.log(this.cliente);
+
+    this.clienteService.agregarcliente(this.cliente).subscribe((data: any) => {
+      console.log(data);
+
+      if(data){
+        window.localStorage.setItem('cliente', JSON.stringify(data._id));
+        this.router.navigate(['/dashboardcliente/misproductos']);
+       
+      }
+
+    });
+
+  }
+
 
 }

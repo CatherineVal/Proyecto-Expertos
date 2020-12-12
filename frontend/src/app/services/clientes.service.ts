@@ -35,4 +35,8 @@ export class ClientesService {
     return this.http.post(`${this.urlAppi}/login`, cliente); 
   }
 
+  agregarcliente(cliente){
+    return this.http.post(this.urlAppi, cliente);
+  }
+
 }

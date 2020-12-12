@@ -5,6 +5,8 @@
         <th scope="col">#</th>
         <th scope="col">Nombre</th>
         <th scope="col">Descripcion</th>
+        <th scope="col">Accion</th>
+
           </tr>
     </thead>
     <tbody>
@@ -12,7 +14,46 @@
         <th scope="row">{{ i + 1 }}</th>
         <td>{{item.nombre}}</td>
         <td>{{item.descripcion}}</td>
-         </tr>
+        <td><button (click)="eliminarRole()" class="btn btn-danger btn-sm">Eliminar</button></td>
+
+        </tr>
     
     </tbody>
   </table>
+
+  <!-- Button trigger modal -->
+<button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#exampleModalLong">
+  Agregar nuevo role
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center" id="exampleModalLongTitle">Agregue nuevo role</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Nombre</label>
+              <input [(ngModel)]="role.nombres" type="text" class="form-control"  placeholder="Email">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputPassword4">descripcion</label>
+              <input [(ngModel)]="roles.descripcion" type="text" class="form-control"  placeholder="Password">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary">Guardar Cambios</button>
+      </div>
+    </div>
+  </div>
+</div>

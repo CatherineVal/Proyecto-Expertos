@@ -7,6 +7,10 @@ import {RoleService} from 'src/app/services/role.service';
 })
 export class RolesComponent implements OnInit {
   role:any;
+  roles: any = {
+    nombre:'',
+    descripcion:''
+  }
   constructor(private RoleService: RoleService) {
     this.obtenerRole();
    }
@@ -22,5 +26,25 @@ export class RolesComponent implements OnInit {
     });
   }
   
+  validarCampos() {
+
+    if (this.roles.nombreProducto == '') return false;
+    if (this.roles.descripcion == '') return false;
+    return true;
+  }
+
+  agregarRole() {
+    this.RoleService.guardarRole(this.roles).subscribe((data:any)=> {
+      console.log(data);
+      this.obtenerRole();
+    });
+  }
+
+  eliminarRole(idRole){
+    this.RoleService.eliminarRole(idRole).subscribe((data:any)=> {
+     this.obtenerRole();
+      console.log(data);
+    });
+  }
 
 }
