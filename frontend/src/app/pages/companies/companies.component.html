@@ -6,8 +6,16 @@
     </a>
 </nav>
 
-<app-imagen [imagen]="imagen" ></app-imagen>
-
 <app-navbarpaginas [paginas]="paginas"></app-navbarpaginas>
+
+<app-imagen *ngIf="imagen"></app-imagen>
+
+<app-galeria *ngIf="galeria" [data]="galeria" ></app-galeria>
+
+<app-loginP *ngIf="loginE"></app-loginP>
+
+
+
+
 
 <app-footerpaginas></app-footerpaginas>

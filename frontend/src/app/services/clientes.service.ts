@@ -39,4 +39,11 @@ export class ClientesService {
     return this.http.post(this.urlAppi, cliente);
   }
 
+  agregarProductos(producto, idCliente){
+    return this.http.post(this.urlAppi+'/'+idCliente +'/compras', producto);
+  }
+
+  eliminarProductos(id, idCliente){
+    return this.http.delete(this.urlAppi+'/'+idCliente +'/compras/eliminar/' + id);
+  }
 }

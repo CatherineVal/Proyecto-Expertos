@@ -62,6 +62,9 @@ export class ProductosComponent implements OnInit {
 
 
   agregarPrudcto() {
+
+    console.log(this.producto);
+
     this.serviceProducto.agregarProducto(this.idEmpresa, this.producto).subscribe((data:any)=> {
       console.log(data);
       this.obtenerProdcutos();

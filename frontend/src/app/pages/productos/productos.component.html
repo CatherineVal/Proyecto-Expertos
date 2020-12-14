@@ -63,8 +63,8 @@
 
         <div class="form-group">
           <label for="formGroupExampleInput">Seleccione categoria</label>
-          <select [(ngModel)]="producto.categoria" name="" class="form-control" id="">
-            <option *ngFor="let item of categorias" value="">{{ item.nombre }}</option>
+          <select [(ngModel)]="producto.categoria" name="" class="form-control">
+            <option *ngFor="let item of categorias" value="{{ item.nombre }}">{{ item.nombre }}</option>
           </select>
         </div>
 

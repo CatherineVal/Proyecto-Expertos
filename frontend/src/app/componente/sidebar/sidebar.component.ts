@@ -14,10 +14,12 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit(): void {
   
-    this.idAdmin = JSON.parse(window.localStorage.getItem('empresa'));
+    this.idAdmin = JSON.parse(window.localStorage.getItem('admin'));
 
     this.obtenerEmpresa();
   }
+
+  // ng build --prod
 
   obtenerEmpresa(){
     this.usuariosService.obtenerUsuarios(this.idAdmin).subscribe((data:any) =>  this.nombre = data.nombre);

@@ -5,14 +5,25 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <img class="img-fluid" width="100px" src="../../../../assets/img/Logo.png" alt="">
-          
-        </li>
+          <img class="img-fluid" width="100px" src="../../../assets/img/LOGO DE LA CATHERINA JPG copia.png" alt="">
+           </li>
+
       </ul>
-      <form class="form-inline mt-2 mt-md-0">
-       
-        <button class="btn btn-outline-primary my-2 my-sm-0" type="button">Comenzar</button>
-      </form>
+      <h4 class="text-center text-primary">¡Bienvenidos a G-Service!</h4>
+      <div class="form-inline mt-2 mt-md-0">
+        <div class="form-group col-md-4">
+          <div class="dropdown">
+            <button class="btn btn-outline-pri dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             Comenzar como...
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" [routerLink]="['/login']" routerLinkActive="active"  href="#">Clientes</a>
+              <a class="dropdown-item"  [routerLink]="['/loginempresa']" routerLinkActive="active" href="#">Empresa</a>
+              <a class="dropdown-item"  [routerLink]="['/loginadmin']" routerLinkActive="active" href="#">Colaboradores</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </nav>
 
@@ -52,21 +63,21 @@
 
     <!-- Three columns of text below the carousel -->
     <div class="row">
-      <div class="col-lg-4">
+      <div class="col-lg-4 shadow p-3 mb-5 bg-white rounded">
         <img class="img-fluid" src="../../../assets/img/codigo-abierto-workana-glosario-850x400.jpg" alt="">
         <h2>Obten Eficiencia</h2>
         <p class="description">Ofrecemos facilidad de generar codigo para crear tu propio sitio web de manera facil y sencilla.</p>
         <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
       </div><!-- /.col-lg-4 -->
-      <div class="col-lg-4">
+      <div class="col-lg-4 ">
         <img class="img-fluid" src="../../../assets/img/shortcuts-2018-10-03.png" alt="">
         <h2>Acceso Facil</h2>
         <p class="description">
             shorcuts personalizados de manera sencilla.</p>
         <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
       </div><!-- /.col-lg-4 -->
-      <div class="col-lg-4">
-       <img class="img-fluid" src="../../../assets/img/Que-es-CSS.jpg" alt="">
+      <div class="col-lg-4 shadow p-3 mb-5 bg-white rounded">
+       <img class="img-fluid " src="../../../assets/img/Que-es-CSS.jpg" alt="">
         <h2>Personaliza</h2>
         <p class="description">Podras usar estilos css para personalizar tu pagina.</p>
         <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>

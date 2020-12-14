@@ -14,7 +14,7 @@ export class ImagenService {
   }
 
   subirImagenNode(imagen, idEmpresa) {
-    return this.http.post('http://localhost:3000/empresa/image/'+idEmpresa , imagen);
+    return this.http.post('https://proyectoexpertos.herokuapp.com/empresa/image/'+idEmpresa , imagen);
   }
 
   eliminarImg(idEmpresa, idImagen){

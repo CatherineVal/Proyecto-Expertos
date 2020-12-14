@@ -1,54 +1,19 @@
 <div class="cards">
 
     <div class="container">
-       
-        <div class="card">
-            <img src="../../../assets/img/codigo-abierto-workana-glosario-850x400.jpg">
-            <h4>Producto 1</h4>
-            <h5>Descripcion</h5>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, excepturi unde?</p>
+        <div *ngFor="let item of productos"  class="card">
+            <img src="{{ item.img }}">
+            <h4>{{ item.nombre }}</h4>
+            <h5>{{ item.nombre }}</h5>
+            <h4>{{ item.precio }}</h4>
+
+            <p>{{ item.descripcion }}</p>
             <div class="container fluid">
-                <h4>$00.00</h4>
-                <button class="btn btn-success btn-sm">Comprar</button>
-                
+                <button (click)="comprar(item)" [disabled]="!idCliente" class="btn btn-success btn-sm">Comprar</button>
             </div>
-           <hr>
+            <hr>
         </div>
-        
-        <div class="card">
-            <img src="../../../assets/img/codigo-abierto-workana-glosario-850x400.jpg">
-            <h4>producto 2</h4>
-            <h5>Descripcion</h5>
-            <p class="sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, excepturi unde?</p>
-            <div class="container fluid">
-                <h4>$00.00</h4>
-                <button class="btn btn-success btn-sm">Comprar</button>
-                
-            </div>
-           <hr>
-        </div>
-        
-        <div class="card">
-            <img src="../../../assets/img/codigo-abierto-workana-glosario-850x400.jpg">
-            <h4>Producto 3</h4>
-            <h5>Descripcion</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, excepturi unde?</p>
-            <div class="container fluid">
-                <h4>$00.00</h4>
-                <button class="btn btn-success btn-sm">Comprar</button>
-                
-            </div>
-           <hr>
-            
-        </div>
-     
+
     </div>
-    
-
-  
-  </div>
-  
-  
-  
-  
+</div>

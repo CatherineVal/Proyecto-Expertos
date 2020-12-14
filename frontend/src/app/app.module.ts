@@ -48,6 +48,7 @@ import { NavbaradminComponent } from './componente/navbaradmin/navbaradmin.compo
 import { NavbarpaginasComponent } from './pages/navbarpaginas/navbarpaginas.component';
 import { FooterpaginasComponent } from './pages/footerpaginas/footerpaginas.component';
 import { ImagenComponent } from './components/imagen/imagen.component';
+import { NavbarclienteComponent } from './componente/navbarcliente/navbarcliente.component';
 
 
 
@@ -182,6 +183,10 @@ import { ImagenComponent } from './components/imagen/imagen.component';
     
     
     ImagenComponent,
+    
+    
+    
+    NavbarclienteComponent,
     
    
     

@@ -17,8 +17,12 @@ export class CompaniesComponent implements OnInit {
   contenido: any;
   informacion: any = [];
 
+
   // Shorcouts
+  galeria:any;
   imagen:any;
+  loginE: any;
+  plantillas:any;
 
   constructor(private activateRoute: ActivatedRoute, private empresaService: EmpresasService, private contenidoServico: ContenidoService) { }
 
@@ -75,7 +79,7 @@ export class CompaniesComponent implements OnInit {
       inicio = 0;
     }
 
-    console.log(this.informacion);
+    //console.log(this.informacion);
     this.obtenerSchorcouts();
 
   }
@@ -88,6 +92,23 @@ export class CompaniesComponent implements OnInit {
         this.imagen = this.informacion[j];
       }
       
+      if (this.informacion[j].tipo == 'login') {
+        this.loginE = this.informacion[j];
+
+
+      }
+
+      if (this.informacion[j].tipo == 'plantillas') {
+        this.plantillas = this.informacion[j];
+
+        
+      }
+
+      if (this.informacion[j].tipo == 'productos') {
+        this.galeria = this.informacion[j];
+      }
+
+
     }
 
   }
