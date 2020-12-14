@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class ImagenService {
 
   constructor(private http: HttpClient) { }
-  urlAppi: string = 'http://localhost:3000/empresa';
+  urlAppi: string = 'https://proyectoexpertos.herokuapp.com/empresa';
   url: string = 'https://api.cloudinary.com/v1_1/dsxagbugw/image/upload';
   subirImagen(imagen) {
     return this.http.post('https://api.cloudinary.com/v1_1/dsxagbugw/image/upload', imagen);

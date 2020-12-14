@@ -9,7 +9,7 @@ export class EmpresasService {
   constructor(private http: HttpClient) { 
 
   }
-  urlAppi: string = 'http://localhost:3000/empresa';
+  urlAppi: string = 'https://proyectoexpertos.herokuapp.com/empresa';
 
   obtenerempresas() {
     return this.http.get(this.urlAppi);

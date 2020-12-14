@@ -9,7 +9,7 @@ export class ContenidoService {
   constructor(private http: HttpClient) { }
 
 
-  urlAppi: string = 'http://localhost:3000/contenido';
+  urlAppi: string = 'https://proyectoexpertos.herokuapp.com/contenido';
 
   obtenerContenido(idEmpresa, idPagina) {
     return this.http.get(this.urlAppi + '/'+ idEmpresa + '/contenido/' + idPagina); 

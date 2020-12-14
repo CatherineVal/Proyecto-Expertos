@@ -8,7 +8,7 @@ export class ProductoService {
 
   constructor(private http: HttpClient) { }
 
-  url: String = 'http://localhost:3000/empresa';
+  url: String = 'https://proyectoexpertos.herokuapp.com/empresa';
 
   agregarProducto(idEmpresa, producto) {
     return this.http.post(`${this.url}/${idEmpresa}/productos`, producto);

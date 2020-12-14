@@ -95,7 +95,7 @@ router.post('/:idCliente/compras', function (req, res) {
 });
 
 
-router.post('/:idCliente/compras/eliminar/:idProducto', function (req, res) {
+router.delete('/:idCliente/compras/eliminar/:idProducto', function (req, res) {
 
     let body = req.body;
     let idCliente = req.params.idCliente;

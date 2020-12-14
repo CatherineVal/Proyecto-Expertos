@@ -8,7 +8,7 @@ export class PaginaService {
 
   constructor(private http: HttpClient) { }
 
-  urlAppi: string = 'http://localhost:3000/empresa';
+  urlAppi: string = 'https://proyectoexpertos.herokuapp.com/empresa';
   //:idEmpresa/pagina/eliminar/:idPagina
  
   eliminarPagina(idEmpresa, idPagina){

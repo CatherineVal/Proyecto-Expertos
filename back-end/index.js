@@ -8,6 +8,7 @@ app.use(cors());
 app.use( bodyParser.json() );
 app.use( bodyParser.urlencoded( { extended: true } ) );
 
+app.set('puerto', process.env.PORT || 3000);
 
 // Importar rutas
 
@@ -19,13 +20,6 @@ var rutaAdmin = require('./routes/admin');
 var rutaPlan = require('./routes/plan');
 var rutaCategoria = require('./routes/categoria');
 var rutaContenido = require('./routes/contenido');
-
-
-
-
-
-
-
 
 
 // Usar la ruta
@@ -40,15 +34,8 @@ app.use( '/categoria', rutaCategoria );
 app.use( '/contenido', rutaContenido );
 
 
-
-
-
-
-
-
-
-app.listen( 3000, () => {
-    console.log('Servido corriendo en el puerto 3000 ')
+app.listen( app.get('puerto'), () => {
+    console.log('Servido corriendo en el puerto : ' + app.get('puerto'));
 });
 
 

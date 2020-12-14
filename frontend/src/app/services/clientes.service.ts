@@ -10,7 +10,7 @@ export class ClientesService {
 
   }
 
-  urlAppi: string = 'http://localhost:3000/cliente';
+  urlAppi: string = 'https://proyectoexpertos.herokuapp.com/cliente';
 
   obtenerclientes() {
     return this.http.get(this.urlAppi);

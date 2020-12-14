@@ -8,7 +8,7 @@ export class RoleService {
 
   constructor(private http: HttpClient) {
    }
-   urlAppi: string = 'http://localhost:3000/roles';
+   urlAppi: string = 'https://proyectoexpertos.herokuapp.com/roles';
 
    obtenerRoles() {
     return this.http.get(this.urlAppi);

@@ -9,7 +9,7 @@ export class UsuariosService {
   constructor(private http: HttpClient) {
 
    }
-   urlAppi: string = 'http://localhost:3000/admin';
+   urlAppi: string = 'https://proyectoexpertos.herokuapp.com/admin';
 
   obtenerusuarios() {
     return this.http.get(this.urlAppi);
