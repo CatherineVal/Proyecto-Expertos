@@ -41,7 +41,7 @@
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="inputEmail4">Nombre</label>
-              <input [(ngModel)]="role.nombres" type="text" class="form-control"  placeholder="Email">
+              <input [(ngModel)]="roles.nombre" type="text" class="form-control"  placeholder="Email">
             </div>
             <div class="form-group col-md-6">
               <label for="inputPassword4">descripcion</label>
@@ -52,7 +52,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary">Guardar Cambios</button>
+        <button type="button" class="btn btn-primary" (click)="agregarRole()">Guardar Cambios</button>
       </div>
     </div>
   </div>
