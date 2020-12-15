@@ -4,11 +4,11 @@
 
         <div *ngFor="let item of productos"  class="card">
             <img src="{{ item.img }}">
-            <h4>{{ item.nombre }}</h4>
+            <h4>Nombre: {{ item.nombre }}</h4>
             <h5>{{ item.nombre }}</h5>
-            <h4>{{ item.precio }}</h4>
+            <h4>Precio: {{ item.precio }}</h4>
 
-            <p>{{ item.descripcion }}</p>
+            <p>Descripcion: {{ item.descripcion }}</p>
             <div class="container fluid">
                 <button (click)="comprar(item)" [disabled]="!idCliente" class="btn btn-success btn-sm">Comprar</button>
             </div>
